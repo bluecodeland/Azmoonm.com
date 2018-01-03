@@ -10,8 +10,8 @@
 /*************************
 *******Typography******
 **************************/
-@import url(http://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
-@import url(http://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
+@import url(https://fonts.googleapis.com/earlyaccess/droidarabickufi.css);
+@import url(https://fonts.googleapis.com/earlyaccess/droidarabicnaskh.css);
 body {
   font-family: 'Droid Arabic Kufi', sans-serif;
   font-size: 14px;
