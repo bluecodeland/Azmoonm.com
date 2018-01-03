@@ -1,0 +1,45 @@
+@extends('layouts.dashboard')
+
+@section('title', 'واردات نتایج آزمون')
+
+@section('content')
+<div class="container">
+  <div class="page-header page-heading">
+    <h1 class="pull-right dashboard">واردات نتایج آزمون</h1>
+    <ol class="breadcrumb pull-left where-am-i">
+      <li><a href="/admin">مدیریت سایت</a></li>
+      <li><a href="/admin/exam">نتایج آزمون</a></li>
+      <li>واردات نتایج آزمون</li>
+    </ol>
+    <div class="clearfix"></div>
+  </div>
+
+  <form id="form-photo" action="{{ URL::to('admin/results/upload') }}" method="POST" class="" enctype="multipart/form-data">
+    {{ csrf_field() }}
+
+    <!-- file -->
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-sm-9">
+          <h2>فایل واردات</h2>
+          <div class="form-group{{ $errors->has('file') ? ' has-error' : '' }}">
+            <label for="tasks" class="col-sm-4 control-label">آپلود فایل</label>
+            <div class="col-sm-8 photo">
+              <input type="file" name="file" id="file" class="form-control filestyle" data-classButton="btn btn-primary" data-input="true"  data-iconName="fa fa-btn fa-folder" data-buttonText="انتخاب فایل" data-buttonName="btn-primary">
+               <input type="submit" name="filesub" id="filesub" class="btn btn-primary" data-classButton="btn btn-primary" data-input="true"  data-iconName="fa fa-btn fa-folder" data-buttonText="ارسال" data-buttonName="btn-primary" value="ذخیره فایل">
+              @if ($errors->has('file'))
+              <span class="help-block">
+                <strong>{{ $errors->first('file') }}</strong>
+              </span>
+              @endif
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+  <div class="clearfix"></div>
+</div>
+
+@endsection
